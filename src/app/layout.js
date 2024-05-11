@@ -1,18 +1,18 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import MRocketLogo from '../../public/svg/rocket.svg'
-import NavList from '../components/NavList'
-import './globals.css'
+import Image from "next/image";
+import Link from "next/link";
+import MRocketLogo from "../../public/svg/rocket.svg";
+import NavList from "../components/NavList";
+import "./globals.css";
 
 export const metadata = {
   title: {
-    template: '%s | M Rocket Solutions',
+    template: "%s | M Rocket Solutions",
   },
   openGraph: {
-    title: 'M Rocket Solutions',
-    description: 'Web Development Consultancy',
-  }
-}
+    title: "M Rocket Solutions",
+    description: "Web Development Consultancy",
+  },
+};
 export default function Layout({ children }) {
   return (
     <html lang="en">
@@ -39,8 +39,11 @@ export default function Layout({ children }) {
               <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
               <div className="sm:flex sm:items-center sm:justify-between">
                 <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
-                  © {new Date().getFullYear()}{' '}
-                  <a href="https://mrocketsolutions.com/" className="hover:underline">
+                  © {new Date().getFullYear()}{" "}
+                  <a
+                    href="https://mrocketsolutions.com/"
+                    className="hover:underline"
+                  >
                     M Rocket
                   </a>
                   . All Rights Reserved.
@@ -51,5 +54,5 @@ export default function Layout({ children }) {
         </div>
       </body>
     </html>
-  )
+  );
 }
