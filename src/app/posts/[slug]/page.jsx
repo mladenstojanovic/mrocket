@@ -34,7 +34,8 @@ async function getData(slug) {
   return post
 }
 
-export async function generateMetadata({ params }) {
+export async function generateMetadata(props) {
+  const params = await props.params;
   const post = await getData(params.slug)
   if (!post) return notFound()
   return {
@@ -59,7 +60,8 @@ export async function generateStaticParams() {
   }))
 }
 
-export default async function Post({ params }) {
+export default async function Post(props) {
+  const params = await props.params;
   const post = await getData(params.slug)
 
   if (!post) {

@@ -38,7 +38,8 @@ async function getPage(slug) {
   return page
 }
 
-export async function generateMetadata({ params }) {
+export async function generateMetadata(props) {
+  const params = await props.params;
   const page = await getPage(params.slug)
   if (!page) return notFound()
 
@@ -57,7 +58,8 @@ export async function generateMetadata({ params }) {
   }
 }
 
-export default async function Page({ params }) {
+export default async function Page(props) {
+  const params = await props.params;
   const page = await getPage(params.slug)
   if (!page) {
     return notFound()
